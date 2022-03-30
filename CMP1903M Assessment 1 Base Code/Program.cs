@@ -16,8 +16,9 @@ namespace CMP1903M_Assessment_1_Base_Code
 
             //Create 'Input' object
             //Get either manually entered text, or text from a file
-
-
+            Input a = new Input();
+            string b = a.fileTextInput("");
+           
             //Create an 'Analyse' object
             //Pass the text input to the 'analyseText' method
 
@@ -30,7 +31,7 @@ namespace CMP1903M_Assessment_1_Base_Code
 
             //TO ADD: Get the frequency of individual letters?
 
-           
+            Console.ReadKey(); 
         }
         
         

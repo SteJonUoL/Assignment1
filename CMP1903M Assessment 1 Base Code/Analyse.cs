@@ -18,9 +18,14 @@ namespace CMP1903M_Assessment_1_Base_Code
         {
             //List of integers to hold the first five measurements:
             //1. Number of sentences
+            //NULL
             //2. Number of vowels
+            char[] vowels = "AEIOU".ToCharArray();
             //3. Number of consonants
+            char[] consonants = "BCDFHJKLMNPQRSTVWXYZ".ToCharArray();
+
             //4. Number of upper case letters
+
             //5. Number of lower case letters
             List<int> values = new List<int>();
             //Initialise all the values in the list to '0'
@@ -29,6 +34,21 @@ namespace CMP1903M_Assessment_1_Base_Code
                 values.Add(0);
             }
 
+            foreach (var i in input)
+            {
+                if (input == "*")
+                {
+                    break;
+                }
+                else if (vowels.Contains(i))
+                {
+                    values[1]++;
+                }
+                else
+                {
+                    values[2]++;
+                }
+            }
 
             return values;
         }
