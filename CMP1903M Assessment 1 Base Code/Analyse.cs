@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 
 namespace CMP1903M_Assessment_1_Base_Code
 {
@@ -30,7 +31,7 @@ namespace CMP1903M_Assessment_1_Base_Code
             //5. Number of lower case letters
             List<int> values = new List<int>();
             //Initialise all the values in the list to '0'
-            for(int i = 0; i<5; i++)
+            for(int i = 0; i<6; i++)
             {
                 values.Add(0);
             }
@@ -45,11 +46,41 @@ namespace CMP1903M_Assessment_1_Base_Code
                 {
                     values[0]++;
                 }
-                else
+                else if (j == '.' | j == '!' | j == '?')
+                {
+                    values[2]++;
+                }
+
+                else if (consonants.Contains(j))
                 {
                     values[1]++;
                 }
+                else if (j == '*')
+                {
+                    break;
+                }
             }
+
+            Regex rxUpper = new Regex(@"[A-Z]");
+            Regex rxLower = new Regex(@"[a-z]");
+
+            foreach (var k in input)
+            {
+                if (rxUpper.IsMatch(k.ToString()) == true)
+                {
+                    values[3]++;
+                }
+                else if(rxLower.IsMatch(k.ToString()) == true)
+                {
+                    values[4]++;
+                }
+                else if(k == '*')
+                {
+                    break;
+                }
+            }
+
+
 
             return values;
         }

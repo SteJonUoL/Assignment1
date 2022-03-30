@@ -17,6 +17,7 @@ namespace CMP1903M_Assessment_1_Base_Code
 
             Input a = new Input();
             string text = "nothing";
+            Console.WriteLine("Hello there! For manual input; Press 1 | For file input; Press 2.");
             ConsoleKeyInfo menuChoice = Console.ReadKey();
             if (menuChoice.Key == ConsoleKey.D1)
             {
@@ -24,7 +25,9 @@ namespace CMP1903M_Assessment_1_Base_Code
             }
             else if (menuChoice.Key == ConsoleKey.D2)
             {
-                text = a.fileTextInput(Console.ReadLine());
+                Console.Write("\nEnter your File Path> ");
+                string filePath = Console.ReadLine();
+                text = a.fileTextInput(filePath);
             }
             
             Analyse textAnalyser = new Analyse();

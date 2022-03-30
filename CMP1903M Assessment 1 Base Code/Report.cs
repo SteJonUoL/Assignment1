@@ -11,9 +11,10 @@ namespace CMP1903M_Assessment_1_Base_Code
         public string outputReport(List<int> values)
         {
             Console.WriteLine("Vowels: " + values[0]);
-            Console.WriteLine("Consonants: ", + values[1]);
-            Console.WriteLine();
-            Console.WriteLine();
+            Console.WriteLine("Consonants: " + values[1]);
+            Console.WriteLine("Sentence count: " + values[2]);
+            Console.WriteLine("Uppercase letters: " + values[3]);
+            Console.WriteLine("Lowercase letters: " + values[4]);
             return "1";
         }
         //Handles the reporting of the analysis
