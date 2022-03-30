@@ -11,6 +11,7 @@ namespace CMP1903M_Assessment_1_Base_Code
         //Handles the analysis of text
 
         //Method: analyseText
+        
         //Arguments: string
         //Returns: list of integers
         //Calculates and returns an analysis of the text
@@ -34,19 +35,19 @@ namespace CMP1903M_Assessment_1_Base_Code
                 values.Add(0);
             }
 
-            foreach (var i in input)
+            foreach (var j in input.ToUpper())
             {
                 if (input == "*")
                 {
                     break;
                 }
-                else if (vowels.Contains(i))
+                else if (vowels.Contains(j))
                 {
-                    values[1]++;
+                    values[0]++;
                 }
                 else
                 {
-                    values[2]++;
+                    values[1]++;
                 }
             }
 

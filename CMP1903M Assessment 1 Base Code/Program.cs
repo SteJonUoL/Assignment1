@@ -12,21 +12,28 @@ namespace CMP1903M_Assessment_1_Base_Code
         static void Main()
         {
             //Local list of integers to hold the first five measurements of the text
-            List<int> parameters = new List<int>();
-
             //Create 'Input' object
             //Get either manually entered text, or text from a file
+
             Input a = new Input();
-            string b = a.fileTextInput("");
-           
-            //Create an 'Analyse' object
-            //Pass the text input to the 'analyseText' method
-
-
-            //Receive a list of integers back
-
-
-            //Report the results of the analysis
+            string text = "nothing";
+            ConsoleKeyInfo menuChoice = Console.ReadKey();
+            if (menuChoice.Key == ConsoleKey.D1)
+            {
+                text = a.manualTextInput();
+            }
+            else if (menuChoice.Key == ConsoleKey.D2)
+            {
+                text = a.fileTextInput(Console.ReadLine());
+            }
+            
+            Analyse textAnalyser = new Analyse();
+            //Create an 'Analyse' 
+            //Pass the text input to the 'analyseText' 
+            //Receive a list of integers 
+            //Report the results of the 
+            Report repOut = new Report();
+            string tempvar1 = repOut.outputReport(textAnalyser.analyseText(text));
 
 
             //TO ADD: Get the frequency of individual letters?
